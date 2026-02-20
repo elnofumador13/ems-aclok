@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporación Profesional Financiera y Energética Bogotá</title>
+<meta name="description" content="Corporación profesional en Bogotá especializada en optimización financiera, eficiencia energética y consultoría estratégica.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#020617;
+--secondary:#0f172a;
+--accent:#00d4ff;
+--accent2:#3b82f6;
+--glass:rgba(255,255,255,0.05);
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+background:linear-gradient(180deg,#020617,#020617,#0f172a);
+color:white;
+overflow-x:hidden;
+}
+
+/* PARTICLES BACKGROUND */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle at 10% 20%,rgba(0,212,255,0.15),transparent 40%),
+radial-gradient(circle at 80% 80%,rgba(59,130,246,0.15),transparent 40%),
+radial-gradient(circle at 40% 60%,rgba(0,212,255,0.1),transparent 40%);
+animation:bgMove 20s linear infinite;
+z-index:-1;
+}
+
+@keyframes bgMove{
+0%{transform:translate(0,0)}
+50%{transform:translate(-10%,-10%)}
+100%{transform:translate(0,0)}
+}
+
+/* HEADER */
+header{
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(135deg,rgba(15,23,42,0.7),rgba(30,58,138,0.5));
+backdrop-filter:blur(15px);
+animation:fadeDown 1s ease;
+position:relative;
+}
+
+header::after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+background:radial-gradient(circle,#00d4ff,transparent);
+filter:blur(80px);
+animation:pulse 4s infinite;
+right:10%;
+top:20%;
+}
+
+@keyframes pulse{
+0%{opacity:0.3}
+50%{opacity:0.7}
+100%{opacity:0.3}
+}
+
+header h1{
+font-size:48px;
+background:linear-gradient(90deg,#00d4ff,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:15px;
+}
+
+header p{
+opacity:0.9;
+font-size:18px;
+}
+
+/* NAV */
+nav{
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(15px);
+padding:18px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav a{
+color:white;
+margin:0 25px;
+text-decoration:none;
+font-weight:600;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+bottom:-6px;
+left:0;
+width:0;
+height:2px;
+background:linear-gradient(90deg,#00d4ff,#3b82f6);
+transition:0.4s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+padding:50px 20px;
+}
+
+/* CARDS */
+.card{
+background:var(--glass);
+padding:35px;
+border-radius:16px;
+margin-bottom:30px;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.08);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(120deg,transparent,rgba(0,212,255,0.2),transparent);
+transform:translateX(-100%);
+transition:0.6s;
+}
+
+.card:hover::before{
+transform:translateX(100%);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 25px 50px rgba(0,212,255,0.25);
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.stat{
+font-size:38px;
+font-weight:bold;
+background:linear-gradient(90deg,#00d4ff,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:fadeUp 1.5s ease;
+}
+
+/* MAP */
+.map-container{
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,0.6);
+margin-top:25px;
+}
+
+iframe{
+filter:contrast(1.2) brightness(0.9);
+}
+
+/* BUTTON */
+button{
+position:fixed;
+top:20px;
+right:20px;
+padding:14px 20px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#00d4ff,#3b82f6);
+color:white;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 20px rgba(0,212,255,0.6);
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 30px rgba(0,212,255,1);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+background:rgba(2,6,23,0.9);
+border-top:1px solid rgba(255,255,255,0.05);
+margin-top:50px;
+}
+
+/* ANIMATIONS */
+.fadeUp{
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.dark{
+background:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button onclick="toggleDarkMode()">Modo Oscuro</button>
+
+<header>
+<h1>Corporación Financiera y Energética Bogotá</h1>
+<p>Centro Estratégico de Optimización Económica, Energética y Consultoría Profesional</p>
+</header>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#estadisticas">Resultados</a>
+<a href="#ubicacion">Ubicación</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<div class="container">
+
+<section class="card fadeUp">
+<h2>Corporación Profesional</h2>
+<p>Nuestra corporación opera en Bogotá proporcionando soluciones avanzadas de optimización financiera y eficiencia energética. Aplicamos metodologías utilizadas por consultoras internacionales y especialistas en optimización de recursos.</p>
+
+<p>Mediante análisis técnico, evaluación estratégica y asesoría profesional, ayudamos a mejorar la estabilidad financiera y reducir costos energéticos.</p>
+
+</section>
+
+<section id="servicios" class="grid">
+
+<div class="card">
+<h3>Diagnóstico Financiero</h3>
+<p>Análisis completo de ingresos, gastos, flujo de efectivo y optimización económica.</p>
+</div>
+
+<div class="card">
+<h3>Análisis Energético</h3>
+<p>Evaluación técnica del consumo eléctrico y optimización del gasto energético.</p>
+</div>
+
+<div class="card">
+<h3>Optimización Estratégica</h3>
+<p>Implementación de estrategias para maximizar eficiencia económica.</p>
+</div>
+
+<div class="card">
+<h3>Consultoría Profesional</h3>
+<p>Asesoría personalizada basada en análisis profesional.</p>
+</div>
+
+</section>
+
+<section id="estadisticas" class="card">
+<h2>Resultados Promedio</h2>
+
+<div class="stats">
+
+<div>
+<div class="stat">35%</div>
+<p>Reducción promedio de gastos energéticos</p>
+</div>
+
+<div>
+<div class="stat">28%</div>
+<p>Incremento promedio en ahorro</p>
+</div>
+
+<div>
+<div class="stat">500+</div>
+<p>Usuarios asesorados</p>
+</div>
+
+<div>
+<div class="stat">Bogotá</div>
+<p>Centro operativo principal</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="ubicacion" class="card">
+<h2>Ubicación Corporativa</h2>
+
+<div class="map-container">
+
+<iframe
+src="https://www.google.com/maps?q=4.7110,-74.0721&z=15&output=embed"
+width="100%"
+height="450"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+
+<p>Bogotá D.C., Colombia</p>
+
+</section>
+
+<section id="contacto" class="card">
+<h2>Contacto</h2>
+<p>Email: contacto@corporacionbogota.com</p>
+<p>Ciudad: Bogotá D.C.</p>
+<p>Disponibilidad: Lunes a Viernes</p>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Corporación Financiera y Energética Bogotá</p>
+
+<div style="margin-top:15px;">
+<a href="#terminos" style="margin:0 15px;color:#00d4ff;text-decoration:none;">Términos de Uso</a>
+<a href="#privacidad" style="margin:0 15px;color:#00d4ff;text-decoration:none;">Política de Privacidad</a>
+<a href="#cookies" style="margin:0 15px;color:#00d4ff;text-decoration:none;">Política de Cookies</a>
+<a href="#descargo" style="margin:0 15px;color:#00d4ff;text-decoration:none;">Descargo de Responsabilidad</a>
+</div>
+
+</footer>
+
+<!-- TERMINOS -->
+<section id="terminos" class="card" style="margin:40px;">
+<h2>Términos de Uso</h2>
+<p>El uso de este portal implica la aceptación de los presentes términos. La información proporcionada es únicamente con fines educativos e informativos.</p>
+<p>La corporación no garantiza resultados financieros específicos. El usuario es responsable de sus decisiones financieras.</p>
+</section>
+
+<!-- PRIVACIDAD -->
+<section id="privacidad" class="card" style="margin:40px;">
+<h2>Política de Privacidad</h2>
+<p>Respetamos la privacidad de nuestros usuarios. No compartimos información personal con terceros sin consentimiento.</p>
+<p>Podemos recopilar datos como dirección IP, navegador y comportamiento de navegación para mejorar nuestros servicios.</p>
+</section>
+
+<!-- COOKIES -->
+<section id="cookies" class="card" style="margin:40px;">
+<h2>Política de Cookies</h2>
+<p>Este sitio utiliza cookies para mejorar la experiencia del usuario, analizar tráfico y optimizar el rendimiento.</p>
+<p>Al continuar navegando, el usuario acepta el uso de cookies conforme a esta política.</p>
+</section>
+
+<!-- DESCARGO -->
+<section id="descargo" class="card" style="margin:40px;">
+<h2>Descargo de Responsabilidad</h2>
+<p>La información proporcionada no constituye asesoramiento financiero profesional oficial.</p>
+<p>La corporación no se hace responsable por pérdidas o decisiones tomadas basadas en el contenido de este sitio.</p>
+</section>
+
+<script>
+function toggleDarkMode(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
