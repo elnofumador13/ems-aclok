@@ -152,3 +152,17 @@ footer {
     padding: 30px 20px;
     font-size: 14px;
 }
+
+.traffic-status {
+    margin: 10px auto;
+    max-width: 1000px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 14px;
+}
+.traffic-status.info { border-color: #38bdf8; }
+.traffic-status.ok { border-color: #22c55e; }
+.traffic-status.warn { border-color: #f59e0b; }
